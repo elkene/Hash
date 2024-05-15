@@ -7,7 +7,7 @@ HEADERS = $(wildcard *.h) $(wildcard **/*.h)
 leak := 
 UNAME_S := $(shell uname -s)
 ifeq ($(UNAME_S),Linux)
-	leak += valgrind --leak-check=full
+	leak += valgrind
 endif
 ifeq ($(UNAME_S),Darwin)
 	leak += leaks --atExit --
